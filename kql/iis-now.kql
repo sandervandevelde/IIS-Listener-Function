@@ -1,0 +1,5 @@
+
+# extend the incoming message with the current timestamp and the latitude and longitude of the ISS
+
+IisNow
+| extend timestampNow = unixtime_seconds_todatetime(timestamp), latitude = todecimal(iss_position.latitude), longitude = todecimal(iss_position.longitude)
