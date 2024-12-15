@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "IIS_Listener_Function": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7264",
+      "launchBrowser": false
+    }
+  }
+}
