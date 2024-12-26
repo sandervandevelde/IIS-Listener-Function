@@ -1,5 +1,11 @@
 
 # extend the incoming message with the current timestamp and the latitude and longitude of the ISS
 
-IisNow
-| extend timestampNow = unixtime_seconds_todatetime(timestamp), latitude = todecimal(iss_position.latitude), longitude = todecimal(iss_position.longitude)
+let _startTime = datetime(2024-12-26T22:52:30Z);
+let _endTime = datetime(2024-12-26T23:22:30Z);
+IisNowTable
+| extend timestampNow = unixtime_seconds_todatetime(timestamp), 
+latitude = todecimal(iss_position.latitude), 
+longitude = todecimal(iss_position.longitude)
+| extend label = strcat( "At ", format_datetime(timestampNow,'yy-MM-dd [HH:mm:ss]')," the number of astronauts is ", number)
+| where timestampNow between (['_startTime'] .. ['_endTime']) // Time range filtering
