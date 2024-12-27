@@ -25,7 +25,7 @@ namespace IIS_Listener_Function
         }
 
         [Function("IIS-Position")]
-        public async Task RunIisPosition([TimerTrigger("* */1 * * * *")] TimerInfo myTimer)
+        public async Task RunIisPosition([TimerTrigger("0 */1 * * * *")] TimerInfo myTimer)
         {
             _logger.LogInformation($"C# Timer trigger IISPositionUrl function executed at: {DateTime.Now}");
 
