@@ -83,7 +83,7 @@ Only astronauts on the IIS are forwarded.
 
 ## Azure Function
 
-The interval of the function is once every 5 seconds.
+The interval of the function is once every 10 seconds.
 
 ## Environment variables
 
